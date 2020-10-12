@@ -18,7 +18,7 @@ cd $HOME
 wget https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.15.2.linux-amd64.tar.gz
 echo "export PATH=\"${PATH}:/usr/local/go/bin\"" >> $HOME/.profile
-echo "export GOPATH=\"${PATH}:${HOME}/go/bin\"" >> $HOME/.profile
+echo "export GOPATH=\"${HOME}/go/bin\"" >> $HOME/.profile
 source $HOME/.profile
 
 ##Install assetfinder
@@ -36,7 +36,7 @@ go get -u github.com/cgboal/sonarsearch/crobat
 ##Install dnsvalidator
 https://github.com/vortexau/dnsvalidator.git
 cd dnsvalidator/
-python3 setup.py install
+sudo python3 setup.py install
 cd $HOME
 
 ##Install massdns
