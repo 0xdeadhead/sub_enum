@@ -1,0 +1,8 @@
+.gitignore
+fd_config.ini
+*.*.*/
+subdomains.txt
+etag.txt
+resolvers.txt
+*.*/
+
