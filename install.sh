@@ -1,10 +1,11 @@
 #! /bin/bash
 
 ##Install dependencies
-sudo apt update -y && sudo apt install -y build-essential make rustc perl git software-properties-common
+apt update -y && apt install sudo -y
+sudo apt update -y && sudo apt install -y build-essential make rustc perl git software-properties-common wget gcc
 
 ##Install python
-sudo add-apt-repository ppa:deadsnakes/ppa
+sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update -y && sudo apt install python3.8
 
 ##Install findomain
@@ -34,13 +35,13 @@ GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfind
 go get -u github.com/cgboal/sonarsearch/crobat
 
 ##Install dnsvalidator
-https://github.com/vortexau/dnsvalidator.git
+git clone https://github.com/vortexau/dnsvalidator.git
 cd dnsvalidator/
 sudo python3 setup.py install
 cd $HOME
 
 ##Install massdns
-https://github.com/blechschmidt/massdns.git
+git clone https://github.com/blechschmidt/massdns.git
 cd massdns/ && make && sudo mv bin/massdns /usr/bin/
 cd $HOME
 
