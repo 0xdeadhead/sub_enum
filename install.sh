@@ -9,19 +9,26 @@ sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update -y && sudo apt install python3.8
 
 ##Install findomain
+function install_findomain {
 git clone https://github.com/Edu4rdSHL/findomain.git
 cd findomain
 cargo build --release
 sudo mv target/release/findomain /usr/bin/
 cd $HOME
+}
+##check if already installed
+type findomain || install_findomain
 
 ##Install Golang
+function install_golang {
 wget https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.15.2.linux-amd64.tar.gz
 echo "export PATH=\"${PATH}:/usr/local/go/bin\"" >> $HOME/.profile
 echo "export GOPATH=\"${HOME}/go\"" >> $HOME/.profile
 source $HOME/.profile
-
+}
+##check if already installed
+type go || install_golang
 ##Install assetfinder
 go get -u github.com/tomnomnom/assetfinder
 
