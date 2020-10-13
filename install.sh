@@ -1,7 +1,6 @@
 #! /bin/bash
 
 ##Install dependencies
-apt update -y && apt install sudo -y
 sudo apt update -y && sudo apt install -y build-essential make rustc perl git software-properties-common wget gcc
 
 ##Install python
