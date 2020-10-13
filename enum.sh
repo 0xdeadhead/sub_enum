@@ -38,3 +38,6 @@ etag=$( curl -I -s https://raw.githubusercontent.com/assetnote/commonspeak2-word
 ##Bruteforcing Subdomains using shuffledns.
 echo -e "${RED}[+] Started subdomain bruteforcing${NC}"
 shuffledns -strict-wildcard -wt 120 -d "${1}" -w subdomains.txt  -r resolvers.txt -o "${HOME}/Recon_data/${1}/brute_subs.txt"
+#Filtering false positives
+ shuffledns -list "${HOME}/Recon_data/${1}/brute_subs.txt" -strict-wildcard -wt 100 -r resolvers.txt -o "${HOME}/Recon_data/${1}/brute_subs_res.txt"
+ rm "${HOME}/Recon_data/${1}/brute_subs.txt"
